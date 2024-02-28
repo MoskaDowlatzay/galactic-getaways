@@ -1,50 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat+Alternates:wght@300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap");
 
-/* I (Inessa) added this style, the rest is auto from React, we can change them */
 body {
-  background-color: black;
-  color: white;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  /* Had to add "import background from "../assets/img/space.jpg";" to the main.js so it could work here */
+  background-image: url("./assets/img/stars.png");
+  margin: 0;
+  background-size: cover; /* Cover the entire container */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-position: center; /* Center the background image */
 }
 
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
+.text {
+  color: #fff;
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+.text h1 {
+  font-size: 2.5em;
+  line-height: 50px;
+}
+
+.text p {
+  color: #e4e4e4;
+  max-width: 400px;
+  margin: 1em 0;
+  line-height: 27px;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+  .text {
+    text-align: center;
+    order: 1;
+  }
+  .canvas-container {
+    order: 2;
+  }
+  .text p {
+    margin: 1em auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  text h1 {
+    font-size: 3, 4em;
+  }
+  .text p {
+    font-size: 3, 4em;
+  }
 }
