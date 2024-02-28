@@ -97,6 +97,20 @@ const LandingPage = () => {
 
     loop();
 
+    // Astronaut
+    const astronautElement = document.getElementById("astronaut");
+
+    let astronautYPosition = 0;
+    const astronautSpeed = 0.002;
+
+    const astronautLoop = () => {
+      astronautYPosition = Math.sin(Date.now() * astronautSpeed) * 10; // Adjust the factor to control the floating range
+      astronautElement.style.transform = `translateY(${astronautYPosition}px)`;
+      requestAnimationFrame(astronautLoop);
+    };
+
+    astronautLoop();
+
     // Cleanup on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -109,7 +123,7 @@ const LandingPage = () => {
       <div className="canvas-container">
         <canvas id="webgl"></canvas>
       </div>
-      <img id="astronaut" src="../assets/img/astronaut.png" alt="astronaut" />
+      <img id="astronaut" src={astronaut} alt="astronaut" />
       <div className="text">
         <h1>Ready for the trip of your life?</h1>
         <p>

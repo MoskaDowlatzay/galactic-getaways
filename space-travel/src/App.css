@@ -24,17 +24,18 @@ header {
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 #astronaut {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+  position: absolute; /* Change to absolute positioning */
+  top: 45%; /* Position at the vertical center of the header */
+  right: 50%; /* Adjust the right position as needed */
+  transform: translate(0%, -50%); /* Center vertically */
   width: 100px;
   height: 100px;
   z-index: 100;
 }
-
 .text {
   color: #fff;
   padding: 2em;
