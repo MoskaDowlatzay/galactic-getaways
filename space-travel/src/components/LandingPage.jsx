@@ -4,6 +4,7 @@ import * as THREE from "three";
 import moonTexture from "../assets/img/moon-texture.jpg";
 import moonMap from "../assets/img/moon-map.jpg";
 import background from "../assets/img/stars.png";
+import astronaut from "../assets/img/astronaut.png";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -87,10 +88,11 @@ const LandingPage = () => {
     window.addEventListener("resize", handleResize);
 
     // Animate rotation and update scene
+    let myReq;
     const loop = () => {
       mesh.rotation.y += 0.001;
       renderer.render(scene, camera);
-      window.requestAnimationFrame(loop);
+      myReq = window.requestAnimationFrame(loop);
     };
 
     loop();
@@ -98,6 +100,7 @@ const LandingPage = () => {
     // Cleanup on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.cancelAnimationFrame(myReq);
     };
   }, []); // Empty dependency array ensures useEffect runs only once on mount
 
@@ -106,6 +109,7 @@ const LandingPage = () => {
       <div className="canvas-container">
         <canvas id="webgl"></canvas>
       </div>
+      <img id="astronaut" src="../assets/img/astronaut.png" alt="astronaut" />
       <div className="text">
         <h1>Ready for the trip of your life?</h1>
         <p>

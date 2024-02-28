@@ -21,10 +21,18 @@ header {
   width: 100%;
   min-height: 100vh;
   display: grid;
-
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+}
+
+#astronaut {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
 }
 
 .text {
@@ -60,7 +68,7 @@ header {
   }
 }
 @media screen and (max-width: 800px) {
-  text h1 {
+  .text h1 {
     font-size: 3, 4em;
   }
   .text p {
