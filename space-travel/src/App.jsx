@@ -2,6 +2,8 @@
 import { useState } from "react";
 import "./App.css";
 import LandingPage from "./components/LandingPage";
+import NavBar from "./components/NavBar";
+
 
 function App() {
   // do we need to remove this hook?
@@ -9,6 +11,7 @@ function App() {
 
   return (
     <>
+    <NavBar/>
       <LandingPage />
     </>
   );
