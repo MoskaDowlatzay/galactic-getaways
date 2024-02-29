@@ -17,6 +17,11 @@ body {
   box-sizing: border-box;
 }
 
+.nav-link {
+  font-size: large;
+  color: white;
+}
+
 header {
   width: 100%;
   min-height: 100vh;
