@@ -11,7 +11,7 @@ function NavBar() {
                     <Nav.Link href="#explore" style={{ marginRight: '30px' }}>Explore</Nav.Link>
                     <Nav.Link href="#contact" style={{ marginRight: '30px' }}>Contact</Nav.Link>
                     </div>
-                    <Nav.Link href="#favourites" style={{ marginRight: '30px' }}>Favourites</Nav.Link>
+                    <Nav.Link href="#fav" style={{ marginRight: '30px' }}>fav</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -19,4 +19,6 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
 
