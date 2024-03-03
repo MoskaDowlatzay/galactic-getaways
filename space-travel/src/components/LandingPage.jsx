@@ -4,7 +4,13 @@ import * as THREE from "three";
 import moonTexture from "../assets/img/moon-texture.jpg";
 import moonMap from "../assets/img/moon-map.jpg";
 import background from "../assets/img/stars.png";
-import astronaut from "../assets/img/astronaut.png";
+import astronaut from "../assets/img/yoda.png";
+import rocket from "../assets/img/rocket.png";
+
+import { motion, useAnimation } from "framer-motion";
+//import NavBar from "./NavBar";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -111,10 +117,22 @@ const LandingPage = () => {
 
     astronautLoop();
 
+    // Rocket
+    const handleClick = () => {
+      const rocketElement = document.getElementById("rocket");
+
+      rocketElement.style.transition = "transform 3s";
+      rocketElement.style.transform = "translateY(-150vh)";
+    };
+
+    const rocketElement = document.getElementById("rocket");
+    rocketElement.addEventListener("click", handleClick);
+
     // Cleanup on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
       window.cancelAnimationFrame(myReq);
+      rocketElement.removeEventListener("click", handleClick);
     };
   }, []); // Empty dependency array ensures useEffect runs only once on mount
 
@@ -124,6 +142,8 @@ const LandingPage = () => {
         <canvas id="webgl"></canvas>
       </div>
       <img id="astronaut" src={astronaut} alt="astronaut" />
+      <img id="rocket" src={rocket} alt="rocket" />
+
       <div className="text">
         <h1>Ready for the trip of your life?</h1>
         <p>

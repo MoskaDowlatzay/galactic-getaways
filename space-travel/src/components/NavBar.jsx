@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function NavBar() {
     return (
@@ -11,7 +12,7 @@ function NavBar() {
                     <Nav.Link href="#explore" style={{ marginRight: '30px' }}>Explore</Nav.Link>
                     <Nav.Link href="#contact" style={{ marginRight: '30px' }}>Contact</Nav.Link>
                     </div>
-                    <Nav.Link href="#fav" style={{ marginRight: '30px' }}>fav</Nav.Link>
+                    <a href="#"><i className="bi bi-star" style={{ marginRight: '30px', color: 'white', fontSize: '24px' }}></i></a>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
