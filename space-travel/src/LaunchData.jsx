@@ -4,7 +4,7 @@ import { getLaunches } from "./spacex/api";
 import LaunchCard from './spacex/LaunchCard';
 
 
-function App() {
+function LaunchData() {
   const [launchArr, setLaunches] = useState([])
   useEffect(() => {
     (async() => {
@@ -31,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default LaunchData;
