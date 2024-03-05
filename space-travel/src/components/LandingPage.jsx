@@ -14,8 +14,25 @@ import { motion, useAnimation } from "framer-motion";
 //import NavBar from "./NavBar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min";
+import MarsRoverImages from "./MarsRoverImages";
+//import NavBar from "./NavBar";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const LandingPage = () => {
+
+  const [showMarsRoverImages, setshowMarsRoverImages] = useState(false);
+  const marsRoverImagesRef = useRef(null);
+
+  const handleButtonClick = () => {
+    setshowMarsRoverImages(true);
+  };
+
+  useEffect(() => {
+    if (showMarsRoverImages && marsRoverImagesRef.current) {
+      marsRoverImagesRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [showMarsRoverImages]);
   // Enable navigation between pages using react router dom
   const navigate = useNavigate();
 
@@ -281,7 +298,12 @@ const LandingPage = () => {
         </button>
       </div>
     </header>
-  );
+
+{showMarsRoverImages && (
+  <div ref={marsRoverImagesRef}> { }
+    <MarsRoverImages />
+  </div>
+)}
 };
 
 export default LandingPage;
