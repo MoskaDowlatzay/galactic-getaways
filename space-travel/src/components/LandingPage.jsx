@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Card, Button } from "react-bootstrap";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
 import moonTexture from "../assets/img/moon-texture.jpg";
@@ -140,13 +142,114 @@ const LandingPage = () => {
     };
   }, []); // Empty dependency array ensures useEffect runs only once on mount
 
+  // NASA PICTURE OF THE DAY
+
+  const [pictureData, setPictureData] = useState(null);
+  const [showPicture, setShowPicture] = useState(false);
+  const API_KEY = "qqZZSJ3qmFfhdgHmNLkDnN6YaxHdBmEuAddTHPgx";
+
+  useEffect(() => {
+    // Fetch picture of the day when showPicture is true
+    const fetchPictureOfTheDay = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
+        );
+        setPictureData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching NASA picture of the day:", error);
+      }
+    };
+
+    if (showPicture) {
+      fetchPictureOfTheDay();
+    }
+  }, [showPicture]);
+
+  // Click event for showing picture when clicking on astronaut
+  const handleClickAstronaut = () => {
+    event.stopPropagation(); // Prevent the click event from reaching the document
+    setShowPicture(true);
+  };
+
+  // PictureOfTheDay disappears when clicking outside of it
+  const handleDocumentClick = (event) => {
+    if (
+      showPicture &&
+      !document.getElementById("astronaut").contains(event.target)
+    ) {
+      setShowPicture(false);
+    }
+  };
+
+  // Close button functionality
+  const handleClosePicture = () => {
+    setShowPicture(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocumentClick);
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, [showPicture]);
+
   return (
     <header>
       <div className="canvas-container">
         <canvas id="webgl"></canvas>
       </div>
-      <img id="astronaut" src={astronaut} alt="astronaut" />
+      <img
+        id="astronaut"
+        src={astronaut}
+        alt="astronaut"
+        onClick={handleClickAstronaut}
+      />
       <img id="rocket" src={rocket} alt="rocket" />
+
+      {showPicture && pictureData && (
+        <Card className="picture-of-the-day" style={{ width: "600px" }}>
+          <Button
+            variant="light"
+            className="close-button"
+            onClick={handleClosePicture}
+            style={{ position: "absolute", top: "20px", right: "20px" }}
+          >
+            X
+          </Button>
+          <a href={pictureData.url} target="_blank" rel="noopener noreferrer">
+            <Card.Img
+              variant="top"
+              src={pictureData.url}
+              alt={pictureData.title}
+              style={{ maxHeight: "300px", width: "600px", objectFit: "cover" }}
+            />
+          </a>
+          <Card.Body>
+            <Card.Title
+              style={{
+                fontSize: "1.25rem",
+                textAlign: "center",
+                lineHeight: "38px",
+              }}
+            >
+              <a
+                href={pictureData.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {pictureData.title}
+              </a>
+            </Card.Title>
+            <Card.Text
+              style={{ fontSize: "12px", padding: "8px", textAlign: "center" }}
+            >
+              {pictureData.explanation}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      )}
 
       <div className="text">
         <h1>Ready for the trip of your life?</h1>
@@ -157,10 +260,25 @@ const LandingPage = () => {
           aliquip ex ea commodo consequat.
         </p>
         {/* button to display component with Saugat's API (change component name as needed) */}
-        <button className="m-2" onClick={() => navigate('/SpaceLocations')}>Space Locations</button>
+        <button
+          className="m-2 spacebutton"
+          onClick={() => navigate("/SpaceLocations")}
+        >
+          Space Locations
+        </button>
         {/* display component with to SpaceX API */}
-        <button className="m-2" onClick={() => navigate('/RocketData')}>Next 5 Rockets</button>
-        <button className="m-2" onClick={() => navigate('/LaunchData')}>SpaceX Launches</button>
+        <button
+          className="m-2 spacebutton"
+          onClick={() => navigate("/RocketData")}
+        >
+          Next 5 Rockets
+        </button>
+        <button
+          className="m-2 spacebutton"
+          onClick={() => navigate("/LaunchData")}
+        >
+          SpaceX Launches
+        </button>
       </div>
     </header>
   );

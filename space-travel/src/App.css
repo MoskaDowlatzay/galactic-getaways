@@ -33,7 +33,7 @@ header {
 }
 
 #astronaut {
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
   top: 5%; /* Position at the vertical center of the header */
   right: 5%; /* Adjust the right position as needed */
   transform: translate(0%, -50%); /* Center vertically */
@@ -49,7 +49,7 @@ header {
 }
 
 #rocket {
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
   top: 85%; /* Position at the vertical center of the header */
   right: 92%; /* Adjust the right position as needed */
   transform: translate(0%, -50%); /* Center vertically */
@@ -57,6 +57,50 @@ header {
   height: 200px;
   z-index: 100;
   cursor: pointer;
+}
+
+.picture-of-the-day.card {
+  position: absolute;
+  z-index: 2;
+  max-height: 100%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: inherit;
+  border-radius: 30px 30px 0 0;
+}
+
+.picture-of-the-day.card > div {
+  background: white;
+  border-radius: 30px 30px;
+  padding: 10px;
+}
+
+.picture-of-the-day.card > a > img {
+  border-radius: 30px 30px 0 0;
+}
+
+.picture-of-the-day a {
+  color: inherit;
+}
+
+.picture-of-the-day a:hover {
+  color: darkgrey;
+}
+
+.picture-of-the-day.card > button {
+  background: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 30px;
+  font-size: 15px;
+}
+.picture-of-the-day.card > button:hover {
+  text-decoration: none;
+  background: white;
+  color: black;
+  border-color: transparent;
 }
 
 @keyframes shake {
@@ -126,39 +170,37 @@ header {
   left: 0;
   bottom: 0;
   padding: 20px;
-  display: flex!important;
+  display: flex !important;
   justify-content: center;
   width: 100%;
-  }
-  .icons {
-    align-items: center;
-    
-  }
-    .footer a {
-      color: white;
-      font-size: 20px;
-      padding: 10px;
-      border-right:1px solid white;
-      transition: all .5s ease;
-    }
-    .footer a:first-child {
-      border-left: 1px solid white;
-    }
-    .footer a:hover {
-      color: white;
-    }
-  
-    .bi--twitter-x {
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z'/%3E%3C/svg%3E");
-      background-color: currentColor;
-      -webkit-mask-image: var(--svg);
-      mask-image: var(--svg);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-    }
-  
+}
+.icons {
+  align-items: center;
+}
+.footer a {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid white;
+  transition: all 0.5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid white;
+}
+.footer a:hover {
+  color: white;
+}
+
+.bi--twitter-x {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
