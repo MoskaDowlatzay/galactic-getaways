@@ -1,0 +1,24 @@
+.card {
+    background: white;
+    border-radius: 5px;
+    width: 25rem;
+    height: 30rem;
+    margin: 1rem;
+    text-align: left;
+    /* box-shadow: 0 3px 6px #7cb1e7; */
+
+}
+
+.card > .content {
+padding-left: 0.2rem;
+padding-right: 1rem;
+font-size: 15px;
+}
+
+.card > .content > ul {
+list-style-type: none;
+}
+
+.card > .content > ul > li {
+margin-top: 18px;
+}

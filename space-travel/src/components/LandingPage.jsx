@@ -6,6 +6,7 @@ import moonMap from "../assets/img/moon-map.jpg";
 import background from "../assets/img/stars.png";
 import astronaut from "../assets/img/yoda.png";
 import rocket from "../assets/img/rocket.png";
+import { useNavigate } from "react-router-dom";
 
 import { motion, useAnimation } from "framer-motion";
 //import NavBar from "./NavBar";
@@ -13,6 +14,9 @@ import { motion, useAnimation } from "framer-motion";
 // import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const LandingPage = () => {
+  // Enable navigation between pages using react router dom
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Crete new scene
     const scene = new THREE.Scene();
@@ -152,6 +156,11 @@ const LandingPage = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
+        {/* button to display component with Saugat's API (change component name as needed) */}
+        <button className="m-2" onClick={() => navigate('/SpaceLocations')}>Space Locations</button>
+        {/* display component with to SpaceX API */}
+        <button className="m-2" onClick={() => navigate('/RocketData')}>Next 5 Rockets</button>
+        <button className="m-2" onClick={() => navigate('/LaunchData')}>SpaceX Launches</button>
       </div>
     </header>
   );
