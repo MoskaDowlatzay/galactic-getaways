@@ -9,7 +9,6 @@ import Footer from "./components/footer";
 //import LaunchData from "./SpaceX/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
-import ApiTest from "./components/ApiTest";
 
 function App() {
   // do we need to remove this hook?
@@ -27,7 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
-      <ApiTest />
+
       <Footer />
     </>
   );
