@@ -9,7 +9,7 @@ import Footer from "./components/footer";
 import LaunchData from "./spacex/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
-
+import ThreeScene from "./PlanetThree/ThreeScene";
 function App() {
   // do we need to remove this hook?
   const [count, setCount] = useState(0);
@@ -24,6 +24,7 @@ function App() {
           <Route path="/LaunchData" element={<LaunchData />} />
           <Route path="/RocketData" element={<RocketData />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/SpaceLocations" element={<ThreeScene />}/>
         </Routes>
       </Router>
 
