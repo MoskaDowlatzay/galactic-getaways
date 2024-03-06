@@ -1,22 +1,22 @@
-.card {
+.rocketCard {
     background: white;
     border-radius: 5px;
     width: 25rem;
-    height: 30rem;
+    height: auto;
     margin: 1rem;
     text-align: left;
 }
 
-.card > .content {
+.rocketCard > .content {
 padding-left: 0.2rem;
 padding-right: 1rem;
 font-size: 15px;
 }
 
-.card > .content > ul {
+.rocketCard > .content > ul {
 list-style-type: none;
 }
 
-.card > .content > ul > li {
+.rocketCard > .content > ul > li {
 margin-top: 18px;
 }

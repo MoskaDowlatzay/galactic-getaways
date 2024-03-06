@@ -1,34 +1,33 @@
-.card {
-  background: #fff;
+.launchCard {
+  background: white;
   border-radius: 2px;
-  width: 18rem;
-  height: 15rem;
+  width: 25rem;
+  height: 30rem;
   margin: 1rem;
   text-align: left;
-  /* box-shadow: 2px 5px 5px rgb(106, 138, 190); */
 }
 
-.card > .img-container {
-  height: 60%;
+.launchCard > .img-container {
+  height: 50%;
   overflow: hidden;
   text-align: center;
   background:#6CADDC;
 }
 
-.card > .img-container > img {
+.launchCard > .img-container > img {
   width: 60%
 }
 
-.card > .content {
+.launchCard > .content {
   padding-left: 0.2rem;
   padding-right: 1rem;
   font-size: 15px;
 }
 
-.card > .content > ul {
+.launchCard > .content > ul {
   list-style-type: none;
 }
 
-.card > .content > ul > li {
+.launchCard > .content > ul > li {
   margin-top: 18px;
 }

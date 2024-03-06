@@ -16,7 +16,7 @@ export default function LaunchData() {
 
   return (
   <div className="container mx-auto">
-      <h1 style={{ marginTop: '100px', color: 'white' }}>SpaceX Launches</h1>
+      <h1 style={{ marginTop: '100px', color: 'white' }}>History of SpaceX Launches</h1>
       <div className="row">
         {launchArr.map((launch) => (
           <div key={launch.id} className="col-lg-4 mb-4">

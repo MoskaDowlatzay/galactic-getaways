@@ -2,7 +2,7 @@ import React from "react";
 import "./styleRocket.css";
 import "../App.css";
 
-export default function LaunchCard({
+export default function RocketCard({
   rocket,
   mission,
   provider,
@@ -13,34 +13,39 @@ export default function LaunchCard({
   missionDescription,
 }) {
   return (
-    <div className="card spacecard">
+    <div className="rocketCard spacecard">
       <div className="content">
         <ul>
           <li>
             <h3>Rocket: {rocket} </h3>
           </li>
           <li>
-            <strong>Mission:</strong> {mission}
+            <h6>Mission:</h6> {mission}
           </li>
           <li>
-            <strong>Provider:</strong> {provider}
+            <h6>Provider:</h6> {provider}
           </li>
           <li>
-            <strong>Launch Date:</strong>
+            <h6>Launch Date:</h6>
             <p>{date}</p>
           </li>
           <li>
-            <strong>Launch Location:</strong>
+            <h6>Launch Location:</h6>
             <p>
               {location}, {country}
             </p>
           </li>
           <li>
-            <strong>Description:</strong>
+            <h6>Description:</h6>
             <p>{launchDescription}</p>
             <p>{missionDescription}</p>
           </li>
         </ul>
+        <div className="card-footer">
+        <button className="btn btn-info">
+          Add to Favourites
+        </button>
+        </div>
       </div>
     </div>
   );
