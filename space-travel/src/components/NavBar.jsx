@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function NavBar() {
     return (
-        <Navbar variant="dark" expand="lg" style={{ position: 'fixed', width: '100%', zIndex: '1000' }}>           
+        <Navbar variant="dark" expand="lg" style={{width: '100%', zIndex: '1000'}}>           
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="d-flex justify-content-between w-100 me-auto" style={{ marginLeft: '30px' }}>
                     <div className='d-flex flex-row'>
