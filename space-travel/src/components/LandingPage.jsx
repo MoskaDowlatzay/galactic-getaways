@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
 import moonTexture from "../assets/img/moon-texture.jpg";
@@ -209,6 +209,18 @@ const LandingPage = () => {
     setIsPlaying(true);
   };
 
+  //Yoda Tooltip
+  const tooltip = (
+    <Tooltip
+      id="tooltip"
+      className="custom-tooltip"
+      style={{ background: "white" }}
+    >
+      Click me to reveal the <strong>NASA Picture of the Day</strong>, my young
+      Padawan!
+    </Tooltip>
+  );
+
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick);
     return () => {
@@ -221,12 +233,18 @@ const LandingPage = () => {
       <div className="canvas-container">
         <canvas id="webgl"></canvas>
       </div>
-      <img
-        id="astronaut"
-        src={astronaut}
-        alt="astronaut"
-        onClick={handleClickAstronaut}
-      />
+      <OverlayTrigger
+        className="tooltip-custom"
+        placement="left"
+        overlay={tooltip}
+      >
+        <img
+          id="astronaut"
+          src={astronaut}
+          alt="astronaut"
+          onClick={handleClickAstronaut}
+        />
+      </OverlayTrigger>
       <img id="rocket" src={rocket} alt="rocket" />
 
       {showPicture && pictureData && (
@@ -292,9 +310,9 @@ const LandingPage = () => {
         })}
         {/* </h1> */}
         <p>
-          Welcome to Galactic Getaways, your portal to cosmic adventures!
-          Ready to book your space escapade? Click the buttons below to discover 
-          celestial destinations and the next rocket launches. Your fantasy 
+          Welcome to Galactic Getaways, your portal to cosmic adventures! Ready
+          to book your space escapade? Click the buttons below to discover
+          celestial destinations and the next rocket launches. Your fantasy
           travel experience awaits – where imagination meets the universe.
         </p>
         {/* button to display component with Saugat's API (change component name as needed) */}
