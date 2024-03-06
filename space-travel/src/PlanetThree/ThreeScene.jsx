@@ -179,7 +179,7 @@ const ThreeScene = () => {
     {selectedPlanet && (
       <div style={{
         position: 'absolute',
-        top: 0,
+        top: 50,
         left: 0,
         height: '100%',
         width: '300px', // Adjust the width as needed
