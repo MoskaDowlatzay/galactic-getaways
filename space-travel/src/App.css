@@ -141,7 +141,8 @@ header {
 }
 
 .text p {
-  color: #e4e4e4;
+  /* color: #e4e4e4; */
+  color: #D7FECE;
   max-width: 600px;
   margin: 1em 0;
   line-height: 27px;

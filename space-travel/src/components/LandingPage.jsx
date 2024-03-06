@@ -292,10 +292,10 @@ const LandingPage = () => {
         })}
         {/* </h1> */}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Welcome to Galactic Getaways, your portal to cosmic adventures!
+          Ready to book your space escapade? Click the buttons below to discover 
+          celestial destinations and the next rocket launches. Your fantasy 
+          travel experience awaits – where imagination meets the universe.
         </p>
         {/* button to display component with Saugat's API (change component name as needed) */}
         <button
