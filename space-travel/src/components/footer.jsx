@@ -7,9 +7,9 @@ function Footer() {
         <footer className="footer">
             <div className="container">
             <div className='icons d-flex justify-content-center align-items-center'>
-            <a href="https://github.com/MoskaDowlatzay/Project-2"><i className="fab fa-github"></i></a>
-                <a href="https://twitter.com/?lang=en"><i className="bi--twitter-x"></i></a>
-                <a href="https://www.linkedin.com"><i className="fab fa-linkedin"></i></a>
+            <a href="https://github.com/MoskaDowlatzay"><i className="fab fa-github"></i></a>
+                <a href="https://twitter.com/?lang=en"><i className="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/moska-dowlatzay/"><i className="fab fa-linkedin"></i></a>
             </div>
             <br></br>
                 <div className='d-flex justify-content-center'>

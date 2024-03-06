@@ -5,7 +5,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./components/LandingPage";
 import NavBar from "./components/NavBar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import LaunchData from "./spacex/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
