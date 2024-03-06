@@ -1,10 +1,13 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
-import "./style.css";
+import "./styleLaunch.css";
 
-export default function LaunchCard({ name, date, flight, webcast }) {
+export default function LaunchCard({ name, image, date, flight, webcast }) {
     return (
         <div className="card">
+            <div className="img-container">
+                <img alt={name} src={image} />
+            </div>
             <div className="content">
                 <ul>
                 <li>
