@@ -15,9 +15,6 @@ import { motion, useAnimation } from "framer-motion";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min";
 import MarsRoverImages from "./MarsRoverImages";
-//import NavBar from "./NavBar";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const LandingPage = () => {
 
@@ -299,11 +296,13 @@ const LandingPage = () => {
       </div>
     </header>
 
-{showMarsRoverImages && (
+        
+showMarsRoverImages && (
   <div ref={marsRoverImagesRef}> { }
     <MarsRoverImages />
   </div>
 )}
 };
+
 
 export default LandingPage;
