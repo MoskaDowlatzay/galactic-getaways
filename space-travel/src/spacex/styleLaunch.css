@@ -5,7 +5,18 @@
   height: 15rem;
   margin: 1rem;
   text-align: left;
-  /* box-shadow: 0 3px 6px #7cb1e7, 0 3px 6px #7cb1e7; */
+  /* box-shadow: 2px 5px 5px rgb(106, 138, 190); */
+}
+
+.card > .img-container {
+  height: 60%;
+  overflow: hidden;
+  text-align: center;
+  background:#6CADDC;
+}
+
+.card > .img-container > img {
+  width: 60%
 }
 
 .card > .content {
