@@ -9,8 +9,7 @@ import background from "../assets/img/stars.png";
 import astronaut from "../assets/img/yoda.png";
 import rocket from "../assets/img/rocket.png";
 import { useNavigate } from "react-router-dom";
-
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 //import NavBar from "./NavBar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -125,8 +124,6 @@ const LandingPage = () => {
 
     // Rocket
     const handleClick = () => {
-      const rocketElement = document.getElementById("rocket");
-
       rocketElement.style.transition = "transform 3s";
       rocketElement.style.transform = "translateY(-150vh)";
     };
@@ -186,6 +183,30 @@ const LandingPage = () => {
   // Close button functionality
   const handleClosePicture = () => {
     setShowPicture(false);
+  };
+
+  // Title Animation
+  const sentence = "GALACTIC GETAWAYS".split("");
+  const controls = useAnimationControls();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const titleAnimation = () => {
+    controls.start({
+      transform: [
+        "scale3d(1, 1, 1)",
+        "scale3d(1.2, 0.8, 1)",
+        "scale3d(0.9, 1.1, 1)",
+        "scale3d(1.1, 0.9, 1)",
+        "scale3d(0.95, 1.05, 1)",
+        "scale3d(1, 1, 1)",
+      ],
+      color: ["#ffffff", "#D7FECE", "#C1FFB3", "#94FF7C", "#ffffff"],
+      // transition: {
+      //   duration: 0.5,
+      //   ease: "easeInOut",
+      // },
+    });
+    setIsPlaying(true);
   };
 
   useEffect(() => {
@@ -252,7 +273,24 @@ const LandingPage = () => {
       )}
 
       <div className="text">
-        <h1>Ready for the trip of your life?</h1>
+        {/* <h1> */}
+        {sentence.map((letter, index) => {
+          return (
+            <motion.span
+              animate={controls}
+              onMouseOver={() => {
+                if (!isPlaying) {
+                  titleAnimation();
+                }
+              }}
+              onAnimationComplete={() => setIsPlaying(false)}
+              key={index}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          );
+        })}
+        {/* </h1> */}
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
