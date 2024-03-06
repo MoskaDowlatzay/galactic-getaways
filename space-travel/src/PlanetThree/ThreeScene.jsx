@@ -35,7 +35,7 @@ const ThreeScene = () => {
     const orbit = new OrbitControls(camera, renderer.domElement);
     orbitRef.current = orbit;
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(ambientLight);
 
     const sun = createPlanet(12, sunTexture, 0);
@@ -43,9 +43,10 @@ const ThreeScene = () => {
     scene.add(sun);
 
     // Use emissive material to make the sun glow
-    const material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(sunTexture), emissive: 0xffffff });
+    const material = new THREE.MeshStandardMaterial({ map: new THREE.TextureLoader().load(sunTexture), emissive: 0xfdb813 });
+    const brightnessFactor = 0.7; // Adjust this value to decrease brightness
+    material.emissive.multiplyScalar(brightnessFactor);
     sun.material = material;
-
     scene.add(sun);
 
     const sunlight = new THREE.PointLight(0xffffff, 10000);
