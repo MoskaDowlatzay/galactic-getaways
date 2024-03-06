@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
 import moonTexture from "../assets/img/moon-texture.jpg";
@@ -9,8 +9,7 @@ import background from "../assets/img/stars.png";
 import astronaut from "../assets/img/yoda.png";
 import rocket from "../assets/img/rocket.png";
 import { useNavigate } from "react-router-dom";
-
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 //import NavBar from "./NavBar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -139,8 +138,6 @@ const LandingPage = () => {
 
     // Rocket
     const handleClick = () => {
-      const rocketElement = document.getElementById("rocket");
-
       rocketElement.style.transition = "transform 3s";
       rocketElement.style.transform = "translateY(-150vh)";
     };
@@ -202,6 +199,42 @@ const LandingPage = () => {
     setShowPicture(false);
   };
 
+  // Title Animation
+  const sentence = "GALACTIC GETAWAYS".split("");
+  const controls = useAnimationControls();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const titleAnimation = () => {
+    controls.start({
+      transform: [
+        "scale3d(1, 1, 1)",
+        "scale3d(1.2, 0.8, 1)",
+        "scale3d(0.9, 1.1, 1)",
+        "scale3d(1.1, 0.9, 1)",
+        "scale3d(0.95, 1.05, 1)",
+        "scale3d(1, 1, 1)",
+      ],
+      color: ["#ffffff", "#D7FECE", "#C1FFB3", "#94FF7C", "#ffffff"],
+      // transition: {
+      //   duration: 0.5,
+      //   ease: "easeInOut",
+      // },
+    });
+    setIsPlaying(true);
+  };
+
+  //Yoda Tooltip
+  const tooltip = (
+    <Tooltip
+      id="tooltip"
+      className="custom-tooltip"
+      style={{ background: "white" }}
+    >
+      Click me to reveal the <strong>NASA Picture of the Day</strong>, my young
+      Padawan!
+    </Tooltip>
+  );
+
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick);
     return () => {
@@ -214,12 +247,18 @@ const LandingPage = () => {
       <div className="canvas-container">
         <canvas id="webgl"></canvas>
       </div>
-      <img
-        id="astronaut"
-        src={astronaut}
-        alt="astronaut"
-        onClick={handleClickAstronaut}
-      />
+      <OverlayTrigger
+        className="tooltip-custom"
+        placement="left"
+        overlay={tooltip}
+      >
+        <img
+          id="astronaut"
+          src={astronaut}
+          alt="astronaut"
+          onClick={handleClickAstronaut}
+        />
+      </OverlayTrigger>
       <img id="rocket" src={rocket} alt="rocket" />
 
       {showPicture && pictureData && (
@@ -266,12 +305,29 @@ const LandingPage = () => {
       )}
 
       <div className="text">
-        <h1>Ready for the trip of your life?</h1>
+        {/* <h1> */}
+        {sentence.map((letter, index) => {
+          return (
+            <motion.span
+              animate={controls}
+              onMouseOver={() => {
+                if (!isPlaying) {
+                  titleAnimation();
+                }
+              }}
+              onAnimationComplete={() => setIsPlaying(false)}
+              key={index}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          );
+        })}
+        {/* </h1> */}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Welcome to Galactic Getaways, your portal to cosmic adventures! Ready
+          to book your space escapade? Click the buttons below to discover
+          celestial destinations and the next rocket launches. Your fantasy
+          travel experience awaits – where imagination meets the universe.
         </p>
         {/* button to display component with Saugat's API (change component name as needed) */}
         <button

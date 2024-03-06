@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./components/LandingPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/footer";
-//import LaunchData from "./SpaceX/LaunchData";
+import LaunchData from "./spacex/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
 
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<LandingPage />} />
-          {/* <Route path="/LaunchData" element={<LaunchData />} /> */}
+          <Route path="/LaunchData" element={<LaunchData />} />
           <Route path="/RocketData" element={<RocketData />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat+Alternates:wght@300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 body {
-  font-family: "Montserrat", sans-serif;
   height: 100%;
   /* Had to add "import background from "../assets/img/space.jpg";" to the main.js so it could work here */
   background-image: url("./assets/img/stars.png");
+
   margin: 0;
   background-size: cover; /* Cover the entire container */
   background-repeat: no-repeat; /* Prevent background image from repeating */
@@ -15,6 +14,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
 }
 
 .nav-link {
@@ -59,11 +60,24 @@ header {
   cursor: pointer;
 }
 
+OverlayTrigger {
+  background-color: white;
+}
+
+.custom-tooltip {
+  border-radius: 50px;
+}
+
+.custom-tooltip strong {
+  font-weight: bold;
+  color: #c1ffb3; /* Custom color for the strong text */
+}
+
 .picture-of-the-day.card {
   position: absolute;
   z-index: 2;
   max-height: 100%;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
@@ -130,16 +144,22 @@ header {
   padding: 2em;
 }
 
-.text h1 {
-  font-size: 2.5em;
+.text span {
+  display: inline-block;
+  font-size: 3em;
   line-height: 50px;
+  letter-spacing: 6px;
+  font-weight: 500;
+  cursor: crosshair;
 }
 
 .text p {
-  color: #e4e4e4;
-  max-width: 400px;
+  /* color: #e4e4e4; */
+  color: #d7fece;
+  max-width: 600px;
   margin: 1em 0;
   line-height: 27px;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 800px) {
