@@ -15,7 +15,7 @@ export default function RocketData() {
 
 return (
     <div className="container mx-auto">
-    <h1 style={{ marginTop: '100px', color: 'white' }}>Next 5 Rocket Launches</h1>
+    <h1 style={{ marginTop: '30px', marginBottom: "30px", color: 'white', textAlign: 'center' }}>Next 5 Rocket Launches</h1>
     <div className="row">
     {rocketArr.map((rocket) => (
         <div key={rocket.id} className="col-lg-4 mb-4">

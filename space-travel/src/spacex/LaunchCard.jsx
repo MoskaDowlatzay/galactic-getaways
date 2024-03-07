@@ -5,7 +5,7 @@ import "./styleLaunch.css";
 export default function LaunchCard({ name, image, date, flight, webcast }) {
     return (
         <div className="launchCard">
-            <div className="img-container">
+            <div className="img-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img alt={name} src={image} />
             </div>
             <div className="content">
