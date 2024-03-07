@@ -197,13 +197,21 @@ header {
   .text p {
     margin: 1em auto;
   }
-}
-@media screen and (max-width: 800px) {
   .text h1 {
     font-size: 3, 4em;
   }
   .text p {
     font-size: 3, 4em;
+  }
+
+  #astronaut {
+    top: 30%; /* Position at the vertical center of the header */
+    right: 5%; /* Adjust the right position as needed */
+  }
+  #rocket {
+    top: 90%; /* Position at the vertical center of the header */
+    right: 85%; /* Adjust the right position as needed */
+    transform: translate(0%, -50%); /* Center vertically */
   }
 }
 
