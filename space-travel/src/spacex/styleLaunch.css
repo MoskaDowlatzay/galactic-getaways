@@ -11,11 +11,11 @@
   height: 50%;
   overflow: hidden;
   text-align: center;
-  background:#6CADDC;
+  background: #6caddc;
 }
 
 .launchCard > .img-container > img {
-  width: 60%
+  width: 60%;
 }
 
 .launchCard > .content {
