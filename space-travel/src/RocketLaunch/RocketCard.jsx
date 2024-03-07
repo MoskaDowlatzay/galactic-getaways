@@ -1,8 +1,8 @@
 import React from "react";
-import "./styleRocket.css";
+import { Card, Button } from 'react-bootstrap';
 import "../App.css";
 
-export default function LaunchCard({
+const RocketCard = ({
   rocket,
   mission,
   provider,
@@ -11,37 +11,53 @@ export default function LaunchCard({
   country,
   launchDescription,
   missionDescription,
-}) {
+}) => {
+  const handleAddToFavorites = () => {
+    // Get existing favorites from local storage (if any)
+    const existingFavorites = JSON.parse(localStorage.getItem('rocketFavorites')) || [];
+
+    // Create a new favorite object based on the card data
+    const newFavorite = {
+      rocket,
+      mission,
+      provider,
+      date,
+      location,
+      country,
+      launchDescription,
+      missionDescription,
+    };
+
+    // Add the new favorite to the existing favorites array
+    const updatedFavorites = [...existingFavorites, newFavorite];
+
+    // Save the updated favorites to local storage
+    localStorage.setItem('rocketFavorites', JSON.stringify(updatedFavorites));
+  };
+
+
   return (
-    <div className="card spacecard">
-      <div className="content">
-        <ul>
-          <li>
-            <h3>Rocket: {rocket} </h3>
-          </li>
-          <li>
-            <strong>Mission:</strong> {mission}
-          </li>
-          <li>
-            <strong>Provider:</strong> {provider}
-          </li>
-          <li>
-            <strong>Launch Date:</strong>
-            <p>{date}</p>
-          </li>
-          <li>
-            <strong>Launch Location:</strong>
-            <p>
-              {location}, {country}
-            </p>
-          </li>
-          <li>
-            <strong>Description:</strong>
+    <Card>
+      <Card.Header>Rocket: {rocket}</Card.Header>
+      <Card.Body>
+        <Card.Title>Mission: {mission}</Card.Title>
+        <Card.Text>
+          <h6>Provider: </h6>{provider}
+          <p></p>
+          <h6>Launch Date: </h6>{date}
+          <p></p>
+          <h6>Launch Location: </h6>{location}, {country}
+          <p></p>
+          <h6>Description: </h6>
             <p>{launchDescription}</p>
             <p>{missionDescription}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+        </Card.Text>
+        <Button variant="info" onClick={handleAddToFavorites}>
+          Add to Favourites
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
+
+export default RocketCard;

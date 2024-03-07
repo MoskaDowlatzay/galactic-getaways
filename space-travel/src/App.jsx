@@ -5,11 +5,12 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./components/LandingPage";
 import NavBar from "./components/NavBar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import LaunchData from "./spacex/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
 import ThreeScene from "./PlanetThree/ThreeScene";
+import Favorites from "./Favorites/Favorites";
 function App() {
   // do we need to remove this hook?
   const [count, setCount] = useState(0);
@@ -25,6 +26,8 @@ function App() {
           <Route path="/RocketData" element={<RocketData />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/SpaceLocations" element={<ThreeScene />}/>
+          <Route path="/explore" element={<ThreeScene />}/>
+          <Route path="/favorites" element={<Favorites />}/>
         </Routes>
       </Router>
 

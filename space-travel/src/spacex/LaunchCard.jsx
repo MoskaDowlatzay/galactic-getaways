@@ -4,7 +4,7 @@ import "./styleLaunch.css";
 
 export default function LaunchCard({ name, image, date, flight, webcast }) {
     return (
-        <div className="card">
+        <div className="launchCard">
             <div className="img-container">
                 <img alt={name} src={image} />
             </div>
@@ -23,7 +23,7 @@ export default function LaunchCard({ name, image, date, flight, webcast }) {
                 </li>
                 <li>
                     <a href={webcast} target="_blank">
-                        <Button variant="info">Webcast</Button>
+                        <Button variant="info">Watch the Launch</Button>
                     </a>
                 </li>
                 </ul>
