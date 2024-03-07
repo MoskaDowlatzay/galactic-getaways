@@ -10,7 +10,7 @@ function NavBar() {
       variant="dark"
       expand="lg"
       style={{ width: "100%", zIndex: "1000" }}
-      fixed="top"
+      className="navbarr"
     >
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav
