@@ -74,17 +74,17 @@ header {
   position: absolute;
   z-index: 2;
   max-height: 100%;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   color: inherit;
-  border-radius: 30px 30px 0 0;
+  border-radius: 30px 30px 30px 30px;
 }
 
 .picture-of-the-day.card > div {
   background: white;
-  border-radius: 30px 30px;
+  border-radius: 30px 30px 30px 30px;
   padding: 10px;
 }
 
@@ -197,13 +197,61 @@ header {
   .text p {
     margin: 1em auto;
   }
-}
-@media screen and (max-width: 800px) {
   .text h1 {
     font-size: 3, 4em;
   }
   .text p {
     font-size: 3, 4em;
+  }
+
+  #astronaut {
+    top: 30%; /* Position at the vertical center of the header */
+    right: 5%; /* Adjust the right position as needed */
+  }
+  #rocket {
+    top: 90%; /* Position at the vertical center of the header */
+    right: 85%; /* Adjust the right position as needed */
+    transform: translate(0%, -50%); /* Center vertically */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text {
+    text-align: center;
+    order: 1;
+  }
+  .canvas-container {
+    order: 2;
+  }
+  .text p {
+    margin: 1em auto;
+  }
+  .text h1 {
+    font-size: 3, 4em;
+  }
+  .text p {
+    font-size: 3, 4em;
+  }
+
+  #astronaut {
+    top: 40%; /* Position at the vertical center of the header */
+    right: 5%; /* Adjust the right position as needed */
+  }
+  #rocket {
+    top: 90%; /* Position at the vertical center of the header */
+    right: 85%; /* Adjust the right position as needed */
+    transform: translate(0%, -50%); /* Center vertically */
+  }
+  .picture-of-the-day.card {
+    width: 300px !important;
+  }
+
+  .picture-of-the-day.card > a > img {
+    width: 300px !important;
+  }
+
+  span {
+    padding: 2px;
   }
 }
 
@@ -215,20 +263,22 @@ header {
   display: flex !important;
   justify-content: center;
   width: 100%;
+  line-height: 10px;
 }
 .icons {
   align-items: center;
 }
 .footer a {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   padding: 10px;
-  border-right: 1px solid white;
+  /* border-right: 1px solid white; */
   transition: all 0.5s ease;
 }
-.footer a:first-child {
+
+/* .footer a:first-child {
   border-left: 1px solid white;
-}
+} */
 .footer a:hover {
   color: white;
 }
