@@ -306,27 +306,27 @@ const LandingPage = () => {
             </motion.span>
           );
         })}
-        {/* </h1> */}
         <p>
           Welcome to Galactic Getaways, your portal to cosmic adventures! Ready
           to book your space escapade? Click the buttons below to discover
           celestial destinations and the next rocket launches. Your fantasy
           travel experience awaits – where imagination meets the universe.
         </p>
-        {/* button to display component with Saugat's API (change component name as needed) */}
+        {/* display component with solar system */}
         <button
           className="m-2 spacebutton"
           onClick={() => navigate("/SpaceLocations")}
         >
           Space Locations
         </button>
-        {/* display component with to SpaceX API */}
+        {/* display component with next 5 rocket launches globally */}
         <button
           className="m-2 spacebutton"
           onClick={() => navigate("/RocketData")}
         >
           Next 5 Rockets
         </button>
+        {/* display component with data from SpaceX API */}
         <button
           className="m-2 spacebutton"
           onClick={() => navigate("/LaunchData")}
