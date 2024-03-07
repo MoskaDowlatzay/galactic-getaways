@@ -113,19 +113,25 @@ const ThreeScene = () => {
     window.addEventListener('resize', handleResize);
 
     const handlePlanetClick = (event) => {
+      const canvas = rendererRef.current.domElement;
+      const rect = canvas.getBoundingClientRect();
+      const offsetX = rect.left;
+      const offsetY = rect.top;
+      const mouseX = event.clientX - offsetX;
+      const mouseY = event.clientY - offsetY;
+    
       const raycaster = new THREE.Raycaster();
       const mouse = new THREE.Vector2();
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (mouseX / canvas.clientWidth) * 2 - 1;
+      mouse.y = -(mouseY / canvas.clientHeight) * 2 + 1;
     
-      raycaster.setFromCamera(mouse, camera);
+      raycaster.setFromCamera(mouse, cameraRef.current);
       const intersects = raycaster.intersectObjects(planets, true);
-    
       if (intersects.length > 0) {
         const selected = intersects[0].object;
-        setSelectedPlanet(selected.userData); // Pass userData to setSelectedPlanet
+        setSelectedPlanet(selected.userData);
         const targetPosition = selected.position.clone().add(new THREE.Vector3(0, 0, 30));
-        const targetLookAt = selected.position.clone(); // Updated to target the planet's position
+        const targetLookAt = selected.position.clone();
         animateZoom(targetPosition, targetLookAt);
       }
     };
@@ -163,12 +169,13 @@ const ThreeScene = () => {
     
       requestAnimationFrame(zoomAnimation);
     };
-    
-    window.addEventListener('click', handlePlanetClick);
+
+    const canvas = rendererRef.current.domElement;
+    canvas.addEventListener('click', handlePlanetClick);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('click', handlePlanetClick);
+      canvas.removeEventListener('resize', handleResize);
+      canvas.removeEventListener('click', handlePlanetClick);
       renderer.dispose();
     };
   }, []);
@@ -179,7 +186,7 @@ const ThreeScene = () => {
     {selectedPlanet && (
       <div style={{
         position: 'absolute',
-        top: 50,
+        top: 60,
         left: 0,
         height: '100%',
         width: '300px', // Adjust the width as needed
