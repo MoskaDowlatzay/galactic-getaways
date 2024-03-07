@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 body {
   height: 100%;
   /* Had to add "import background from "../assets/img/space.jpg";" to the main.js so it could work here */
@@ -51,17 +52,13 @@ header {
 
 #rocket {
   position: absolute;
-  top: 85%; /* Position at the vertical center of the header */
+  top: 90%; /* Position at the vertical center of the header */
   right: 92%; /* Adjust the right position as needed */
   transform: translate(0%, -50%); /* Center vertically */
   width: 100px;
   height: 200px;
   z-index: 100;
   cursor: pointer;
-}
-
-OverlayTrigger {
-  background-color: white;
 }
 
 .custom-tooltip {
@@ -117,6 +114,29 @@ OverlayTrigger {
   border-color: transparent;
 }
 
+/* BUTTONS */
+
+.spacebutton {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.spacebutton:hover {
+  background-color: #c1ffb3;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: black;
+  font-weight: 550;
+  transform: translateY(-7px);
+}
+
 @keyframes shake {
   0% {
     transform: translateX(0);
@@ -159,6 +179,8 @@ OverlayTrigger {
   margin: 1em 0;
   line-height: 27px;
   font-weight: 700;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000;
 }
 
 @media screen and (max-width: 800px) {

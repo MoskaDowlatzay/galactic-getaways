@@ -123,19 +123,21 @@ const LandingPage = () => {
     astronautLoop();
 
     // Rocket
-    const handleClick = () => {
-      rocketElement.style.transition = "transform 3s";
+    const rocketElement = document.getElementById("rocket");
+
+    const animateRocket = () => {
+      rocketElement.style.transition = "transform 5s";
       rocketElement.style.transform = "translateY(-150vh)";
     };
 
-    const rocketElement = document.getElementById("rocket");
-    rocketElement.addEventListener("click", handleClick);
+    // Trigger the animation when the component is mounted
+    animateRocket();
 
     // Cleanup on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
       window.cancelAnimationFrame(myReq);
-      rocketElement.removeEventListener("click", handleClick);
+      rocketElement.removeEventListener("click", animateRocket);
     };
   }, []); // Empty dependency array ensures useEffect runs only once on mount
 
@@ -211,11 +213,7 @@ const LandingPage = () => {
 
   //Yoda Tooltip
   const tooltip = (
-    <Tooltip
-      id="tooltip"
-      className="custom-tooltip"
-      style={{ background: "white" }}
-    >
+    <Tooltip id="tooltip" className="custom-tooltip">
       Click me to reveal the <strong>NASA Picture of the Day</strong>, my young
       Padawan!
     </Tooltip>
