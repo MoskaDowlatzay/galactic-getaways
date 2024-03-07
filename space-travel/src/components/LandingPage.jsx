@@ -127,7 +127,7 @@ const LandingPage = () => {
 
     const animateRocket = () => {
       rocketElement.style.transition = "transform 5s";
-      rocketElement.style.transform = "translateY(-150vh)";
+      rocketElement.style.transform = "translateY(-200vh)";
     };
 
     // Trigger the animation when the component is mounted

@@ -215,6 +215,46 @@ header {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .text {
+    text-align: center;
+    order: 1;
+  }
+  .canvas-container {
+    order: 2;
+  }
+  .text p {
+    margin: 1em auto;
+  }
+  .text h1 {
+    font-size: 3, 4em;
+  }
+  .text p {
+    font-size: 3, 4em;
+  }
+
+  #astronaut {
+    top: 40%; /* Position at the vertical center of the header */
+    right: 5%; /* Adjust the right position as needed */
+  }
+  #rocket {
+    top: 90%; /* Position at the vertical center of the header */
+    right: 85%; /* Adjust the right position as needed */
+    transform: translate(0%, -50%); /* Center vertically */
+  }
+  .picture-of-the-day.card {
+    width: 300px !important;
+  }
+
+  .picture-of-the-day.card > a > img {
+    width: 300px !important;
+  }
+
+  span {
+    padding: 2px;
+  }
+}
+
 .footer {
   bottom: 0;
   left: 0;
