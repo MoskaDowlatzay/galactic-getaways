@@ -10,7 +10,7 @@ import LaunchData from "./spacex/LaunchData";
 import RocketData from "./RocketLaunch/RocketData";
 import Contact from "./components/Contact";
 import ThreeScene from "./PlanetThree/ThreeScene";
-import Favorites from "./components/Favorites";
+import Favorites from "./Favorites/Favorites";
 function App() {
   // do we need to remove this hook?
   const [count, setCount] = useState(0);
