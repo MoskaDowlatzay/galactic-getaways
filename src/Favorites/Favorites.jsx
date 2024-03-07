@@ -23,7 +23,7 @@ export default function Favorites() {
 
     return (
     <div className="container mx-auto">
-        <h1 style={{ marginTop: '100px', color: 'white' }}>My List: Rocket Launches</h1>
+        <h1 style={{ marginTop: '30px', marginBottom: "30px", color: 'white', textAlign: 'center' }}>My List: Rocket Launches</h1>
         <div className="row">
         {rocketArr.map((rocket, index) => (
             <div key={index} className="col-lg-4 mb-4">
