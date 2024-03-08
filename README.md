@@ -62,7 +62,7 @@ The project is now live and can be accessed via these links:
 
 The deployed project looks like this:
 
-![Galactic Getaways gif][project-gif]
+![Galactic Getaways gif][project-lg-gif]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,6 +80,7 @@ Created by:
 <!-- MARKDOWN LINKS -->
 [deployed-url]: https://galactic-getaways.netlify.app/home
 [project-gif]: ./src/assets/img/GalacticGetaways.gif
+[project-lg-gif]: ./src/assets/img/GalacticGetaways-lg.gif
 [repo-url]: https://github.com/MoskaDowlatzay/galactic-getaways
 [bootstrap-url]: https://getbootstrap.com/
 [jquery-url]: https://jquery.com/
