@@ -27,6 +27,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/SpaceLocations" element={<ThreeScene />} />
           <Route path="/explore" element={<ThreeScene />} />
+          <Route path="/travel" element={<RocketData />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </Router>
