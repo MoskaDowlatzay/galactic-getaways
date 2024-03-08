@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import planetData from './PlanetData'; // Adjust the path as needed
-import starsTexture from '../assets/planetimg/stars.jpg';
 import sunTexture from '../assets/planetimg/sun.jpg';
 
 const ThreeScene = () => {
@@ -14,14 +13,20 @@ const ThreeScene = () => {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    scene.background = new THREE.CubeTextureLoader().load([
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-    ]);
+    const starsTextureLoader = new THREE.TextureLoader();
+const starsTexture = starsTextureLoader.load('../assets/planetimg/stars2.png', (texture) => {
+  // Preprocess texture here if necessary
+});
+
+// Use starsTexture for cube map
+scene.background = new THREE.CubeTextureLoader().load([
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+]);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -113,19 +118,25 @@ const ThreeScene = () => {
     window.addEventListener('resize', handleResize);
 
     const handlePlanetClick = (event) => {
+      const canvas = rendererRef.current.domElement;
+      const rect = canvas.getBoundingClientRect();
+      const offsetX = rect.left;
+      const offsetY = rect.top;
+      const mouseX = event.clientX - offsetX;
+      const mouseY = event.clientY - offsetY;
+    
       const raycaster = new THREE.Raycaster();
       const mouse = new THREE.Vector2();
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (mouseX / canvas.clientWidth) * 2 - 1;
+      mouse.y = -(mouseY / canvas.clientHeight) * 2 + 1;
     
-      raycaster.setFromCamera(mouse, camera);
+      raycaster.setFromCamera(mouse, cameraRef.current);
       const intersects = raycaster.intersectObjects(planets, true);
-    
       if (intersects.length > 0) {
         const selected = intersects[0].object;
-        setSelectedPlanet(selected.userData); // Pass userData to setSelectedPlanet
+        setSelectedPlanet(selected.userData);
         const targetPosition = selected.position.clone().add(new THREE.Vector3(0, 0, 30));
-        const targetLookAt = selected.position.clone(); // Updated to target the planet's position
+        const targetLookAt = selected.position.clone();
         animateZoom(targetPosition, targetLookAt);
       }
     };
@@ -163,12 +174,13 @@ const ThreeScene = () => {
     
       requestAnimationFrame(zoomAnimation);
     };
-    
-    window.addEventListener('click', handlePlanetClick);
+
+    const canvas = rendererRef.current.domElement;
+    canvas.addEventListener('click', handlePlanetClick);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('click', handlePlanetClick);
+      canvas.removeEventListener('resize', handleResize);
+      canvas.removeEventListener('click', handlePlanetClick);
       renderer.dispose();
     };
   }, []);
@@ -179,7 +191,7 @@ const ThreeScene = () => {
     {selectedPlanet && (
       <div style={{
         position: 'absolute',
-        top: 50,
+        top: 60,
         left: 0,
         height: '100%',
         width: '300px', // Adjust the width as needed
