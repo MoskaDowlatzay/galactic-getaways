@@ -45,15 +45,9 @@ const RocketCard = ({
     // Hide the tooltip after a delay (e.g., 3 seconds)
     setTimeout(() => {
       setShowTooltip(false);
-    }, 3000);
+    }, 1000);
 
   };
-
-  const renderTooltip = () => (
-    <Tooltip id="favBtnTooltip">
-      Added to your list! 🚀
-    </Tooltip>
-  );
   
   return (
     <Card>
@@ -73,7 +67,7 @@ const RocketCard = ({
         </Card.Text>
         <OverlayTrigger
           placement="top"
-          overlay={renderTooltip}
+          overlay={<Tooltip id="favBtnTooltip">Added to favourites!</Tooltip>}
           show={showTooltip}
         >
           <Button 
