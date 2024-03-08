@@ -12,8 +12,8 @@ import neptuneTexture from '../assets/planetimg/neptune.jpg';
 const planetData = [
   {
     name: 'Mercury',
-    description: 'Mercury is the smallest and innermost planet in the Solar System.',
-    weather: 'Extreme temperatures, ranging from -173°C to 427°C.',
+    description: 'Mercury, the smallest planet, is a scorched world where temperatures swing dramatically between day and night.',
+    weather: 'Extremes abound, with blistering highs of 427°C and bone-chilling lows of -173°C.',
     distance: 77.3,
     travelTime: 146,
     size: 4,
@@ -21,8 +21,8 @@ const planetData = [
   },
   {
     name: 'Venus',
-    description: 'Venus is often called Earth\'s "sister planet" because of their similar size, mass, proximity to the Sun, and bulk composition.',
-    weather: 'Extremely hot and has sulfuric acid rain.',
+    description: 'Venus, cloaked in thick clouds of sulfuric acid, boasts a surface hotter than an oven and shrouded in perpetual darkness.',
+    weather: 'Its turbulent atmosphere hosts blistering temperatures and acid rain, making it a true hellish landscape.',
     distance: 41.4, // million kilometers
     travelTime: 225, // days (approximate)
     size: 5,
@@ -30,8 +30,8 @@ const planetData = [
   },
   {
     name: 'Earth',
-    description: 'Earth is the third planet from the Sun and the only astronomical object known to harbor life.',
-    weather: 'Varies greatly depending on location.',
+    description: 'Earth, our beloved blue planet, is a haven of life and diversity, teeming with wonders from pole to pole.',
+    weather: 'From scorching deserts to icy tundras, its ever-changing climate offers a tapestry of conditions.',
     distance: 0, // million kilometers (Earth's distance from itself is 0)
     travelTime: 0, // days (no travel needed)
     size: 5.56,
@@ -39,8 +39,8 @@ const planetData = [
   },
   {
     name: 'Mars',
-    description: 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury.',
-    weather: 'Cold and dry with a thin atmosphere.',
+    description: 'Mars, the red planet, beckons with its rusty landscape and ancient riverbeds, hinting at a watery past.',
+    weather: 'With thin air and fierce dust storms, its surface is a desolate yet intriguing frontier for exploration.',
     distance: 78.3, // million kilometers
     travelTime: 225, // days (approximate)
     size: 5,
@@ -48,8 +48,8 @@ const planetData = [
   },
   {
     name: 'Jupiter',
-    description: 'Jupiter is the largest planet in the Solar System and is primarily composed of hydrogen and helium.',
-    weather: 'Highly turbulent with powerful storms, including the Great Red Spot.',
+    description: 'Jupiter, the gas giant, reigns supreme as the largest world in the Solar System, boasting swirling clouds and colossal storms.',
+    weather: 'Its tumultuous atmosphere hosts the iconic Great Red Spot and a menagerie of swirling vortices.',
     distance: 628.7, // million kilometers
     travelTime: 600, // days (approximate)
     size: 6,
@@ -57,8 +57,8 @@ const planetData = [
   },
   {
     name: 'Saturn',
-    description: 'Saturn is known for its extensive ring system, which consists of nine continuous main rings and three discontinuous arcs.',
-    weather: 'Consists mostly of hydrogen and helium, with traces of ammonia, methane, and water vapor.',
+    description: 'Saturn, adorned with majestic rings, is a jewel of the night sky, captivating with its golden hues and swirling storms.',
+    weather: 'Its gaseous atmosphere teems with mesmerizing cloud patterns and ferocious winds, while its rings dance with icy particles.',
     distance: 1276, // million kilometers
     travelTime: 1100, // days (approximate)
     size: 8,
@@ -67,8 +67,8 @@ const planetData = [
   },
   {
     name: 'Uranus',
-    description: 'Uranus is the seventh planet from the Sun and has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.',
-    weather: 'Mainly consists of hydrogen, helium, and methane.',
+    description: 'Uranus, the enigmatic ice giant, rolls on its side as it orbits the Sun, presenting a peculiar orientation that intrigues astronomers.',
+    weather: 'Its frigid atmosphere, laced with methane, gives rise to brilliant blue-green hues and fierce winds.',
     distance: 2722, // million kilometers
     travelTime: 2500, // days (approximate)
     size: 8.2,
@@ -77,8 +77,8 @@ const planetData = [
   },
   {
     name: 'Neptune',
-    description: 'Neptune is the eighth and farthest known planet from the Sun in the Solar System.',
-    weather: 'Atmosphere composed primarily of hydrogen and helium, with traces of methane.',
+    description: 'Neptune, the distant ice giant, exudes an ethereal beauty with its sapphire-blue hue and swirling clouds, inviting exploration.',
+    weather: 'Its turbulent atmosphere harbors supersonic winds and elusive storms that roam its icy domain.',
     distance: 4345, // million kilometers
     travelTime: 4500, // days (approximate)
     size: 5,
