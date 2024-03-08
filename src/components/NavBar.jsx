@@ -43,7 +43,7 @@ function NavBar() {
           >
           <a href="/favorites" onClick={() => navigate("/favorites")}>
             <i
-              className="bi bi-star star"
+              className="bi bi-star star starBtn"
               style={{
                 marginRight: "30px",
                 color: "white",

@@ -137,6 +137,11 @@ header {
   transform: translateY(-7px);
 }
 
+ /* star button on NavBar */
+.starBtn {
+  cursor: pointer;
+}
+
 /* buttons on Next 5 Rocket Launches */
 .rocketButton {
   transition: all 0.2s ease 0s;
