@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Tooltip } from 'react-bootstrap';
 import "../App.css";
 
 const RocketCard = ({
@@ -53,7 +53,7 @@ const RocketCard = ({
             <p>{missionDescription}</p>
         </Card.Text>
         <Button 
-          className="rocketbutton"
+          className="rocketButton"
           style={{
             backgroundColor: 'rgba(46, 229, 157, 0.4)',
             border: "none"
