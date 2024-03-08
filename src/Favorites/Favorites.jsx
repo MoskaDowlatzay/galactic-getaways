@@ -41,7 +41,7 @@ export default function Favorites() {
             marginBottom: "25px",
             }}
             >
-            What would it be like to be aboard of one of these rockets?
+            What would it be like to be aboard one of these rockets?
         </p>
         <div className="row">
         {rocketArr.map((rocket, index) => (
