@@ -115,7 +115,7 @@ header {
 }
 
 /* BUTTONS */
-
+/* buttons on Home page */
 .spacebutton {
   color: #000;
   background-color: #fff;
@@ -131,10 +131,36 @@ header {
 
 .spacebutton:hover {
   background-color: #c1ffb3;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+  box-shadow: 0px 15px 20px rgba(17, 80, 55, 0.4);
   color: black;
   font-weight: 550;
   transform: translateY(-7px);
+}
+
+/* star button on NavBar */
+.starBtn {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.starBtn:hover {
+  color: #c1ffb3;
+}
+
+/* buttons on Next 5 Rocket Launches */
+.rocketButton {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+.rocketButton:hover {
+  box-shadow: 0px 8px 15px rgba(58, 75, 68, 0.4);
+  color: black;
+  font-weight: 550;
+  transform: translateX(7px);
 }
 
 @keyframes shake {
@@ -191,17 +217,16 @@ header {
     text-align: center;
     order: 1;
   }
-  .canvas-container {
-    order: 2;
-  }
   .text p {
     margin: 1em auto;
   }
-  .text h1 {
-    font-size: 3, 4em;
+
+  .text span {
+    margin: 10px auto;
   }
-  .text p {
-    font-size: 3, 4em;
+
+  .canvas-container {
+    order: 2;
   }
 
   #astronaut {
@@ -233,8 +258,28 @@ header {
     font-size: 3, 4em;
   }
 
+  .text > p {
+    max-width: 80%;
+  }
+
+  .text span {
+    font-size: 25px;
+    line-height: 50px;
+    letter-spacing: 6px;
+  }
+  .navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
   #astronaut {
-    top: 40%; /* Position at the vertical center of the header */
+    top: 30%; /* Position at the vertical center of the header */
     right: 5%; /* Adjust the right position as needed */
   }
   #rocket {

@@ -308,7 +308,7 @@ const LandingPage = () => {
         })}
         <p>
           Welcome to Galactic Getaways, your portal to cosmic adventures! Ready
-          to book your space escapade? Click the buttons below to discover
+          to leave gravity behind? Click the buttons below to discover
           celestial destinations and the next rocket launches. Your fantasy
           travel experience awaits – where imagination meets the universe.
         </p>

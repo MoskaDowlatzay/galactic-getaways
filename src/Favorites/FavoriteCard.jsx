@@ -57,7 +57,15 @@ return (
             <p>{launchDescription}</p>
             <p>{missionDescription}</p>
         </Card.Text>
-        <Button variant="info" onClick={handleRemoveFromFavorites}>
+        <Button 
+            className="rocketButton"
+            style={{
+                backgroundColor: 'rgba(46, 229, 157, 0.4)',
+                border: "none"
+            }}
+            variant="info" 
+            onClick={handleRemoveFromFavorites}
+        >
             Remove from Favourites
         </Button>
         </Card.Body>
