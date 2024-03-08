@@ -115,7 +115,7 @@ header {
 }
 
 /* BUTTONS */
-
+/* buttons on Home page */
 .spacebutton {
   color: #000;
   background-color: #fff;
@@ -131,10 +131,36 @@ header {
 
 .spacebutton:hover {
   background-color: #c1ffb3;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+  box-shadow: 0px 15px 20px rgba(17, 80, 55, 0.4);
   color: black;
   font-weight: 550;
   transform: translateY(-7px);
+}
+
+ /* star button on NavBar */
+.starBtn {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.starBtn:hover {
+  color: #c1ffb3;
+}
+
+/* buttons on Next 5 Rocket Launches */
+.rocketButton {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+.rocketButton:hover {
+  box-shadow: 0px 8px 15px rgba(58, 75, 68, 0.4);
+  color: black;
+  font-weight: 550;
+  transform: translateX(7px);
 }
 
 @keyframes shake {
