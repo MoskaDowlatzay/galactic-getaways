@@ -21,12 +21,10 @@ export default function Contact() {
       body: encode({ "form-name": "contact", name, email, message }),
     })
       .then(() => {
-        console.log("Before reset: ", name, email, message )
         alert("Message sent!");
         setName("");
         setEmail("");
         setMessage("");
-        console.log("After reset: ", name, email, message)
       })
       .catch((error) => alert(error));
   }
@@ -79,6 +77,7 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              value={name}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               onChange={(e) => setName(e.target.value)}
             />
@@ -91,6 +90,7 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
+              value={email}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -104,6 +104,7 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
+              value={message}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-black py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               onChange={(e) => setMessage(e.target.value)}
             />

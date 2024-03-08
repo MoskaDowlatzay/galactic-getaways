@@ -48,12 +48,6 @@ const RocketCard = ({
     }, 1000);
 
   };
-
-  // const renderTooltip = () => (
-  //   <Tooltip id="favBtnTooltip">
-  //     Added to your list! 🚀
-  //   </Tooltip>
-  // );
   
   return (
     <Card>
@@ -73,7 +67,7 @@ const RocketCard = ({
         </Card.Text>
         <OverlayTrigger
           placement="top"
-          overlay={<Tooltip id="favBtnTooltip">Added to your list!</Tooltip>}
+          overlay={<Tooltip id="favBtnTooltip">Added to favourites!</Tooltip>}
           show={showTooltip}
         >
           <Button 
