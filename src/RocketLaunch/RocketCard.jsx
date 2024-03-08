@@ -79,7 +79,7 @@ const RocketCard = ({
           <Button 
             className="rocketButton"
             style={{
-              backgroundColor: 'rgba(46, 229, 157, 0.4)',
+              backgroundColor: 'rgba(46, 229, 157, 0.6)',
               border: "none"
             }}
             variant="info" 

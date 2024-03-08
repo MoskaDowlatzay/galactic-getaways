@@ -8,7 +8,7 @@ function NavBar() {
    //Star Tooltip
    const starTooltip = (
     <Tooltip id="starTooltip" className="custom-tooltip">
-      Click me to see saved rocket launches to <strong>take your imagination to the stars</strong>!
+      Click me to see your saved list of rocket launches to <strong>take your imagination to the stars</strong>!
     </Tooltip>
   );
 

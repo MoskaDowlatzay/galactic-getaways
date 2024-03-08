@@ -131,7 +131,8 @@ header {
 
 .spacebutton:hover {
   background-color: #c1ffb3;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+  box-shadow: 0px 15px 20px rgba(17, 80, 55, 0.4);
   color: black;
   font-weight: 550;
   transform: translateY(-7px);
