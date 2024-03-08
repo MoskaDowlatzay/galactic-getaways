@@ -1,9 +1,16 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Tooltip, OverlayTrigger } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function NavBar() {
   // const navigate = useNavigate();
+
+   //Star Tooltip
+   const starTooltip = (
+    <Tooltip id="starTooltip" className="custom-tooltip">
+      Click me to see saved rocket launches to <strong>take your imagination to the stars</strong>!
+    </Tooltip>
+  );
 
   return (
     <Navbar
@@ -28,6 +35,12 @@ function NavBar() {
               Contact
             </Nav.Link>
           </div>
+          {/* Star with saved rocket launches */}
+          <OverlayTrigger 
+            className="tooltip-custom"
+            placement="left"
+            overlay={starTooltip}
+          >
           <a href="/favorites" onClick={() => navigate("/favorites")}>
             <i
               className="bi bi-star star"
@@ -38,6 +51,7 @@ function NavBar() {
               }}
             ></i>
           </a>
+          </OverlayTrigger>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
