@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import planetData from './PlanetData'; // Adjust the path as needed
-import starsTexture from '../assets/planetimg/stars.jpg';
 import sunTexture from '../assets/planetimg/sun.jpg';
 
 const ThreeScene = () => {
@@ -14,14 +13,20 @@ const ThreeScene = () => {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    scene.background = new THREE.CubeTextureLoader().load([
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-      starsTexture,
-    ]);
+    const starsTextureLoader = new THREE.TextureLoader();
+const starsTexture = starsTextureLoader.load('../assets/planetimg/stars2.png', (texture) => {
+  // Preprocess texture here if necessary
+});
+
+// Use starsTexture for cube map
+scene.background = new THREE.CubeTextureLoader().load([
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+]);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
