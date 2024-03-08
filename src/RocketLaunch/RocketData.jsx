@@ -32,7 +32,7 @@ export default function RocketData() {
           marginBottom: "25px",
           }}
           >
-        Check the rockets scheduled to leave the Earth's gravity in the next few days and save them to your list.
+        Check the rockets scheduled to leave the Earth's gravity in the next few days.
       </p>
       <div className="row">
         {rocketArr.map((rocket) => (

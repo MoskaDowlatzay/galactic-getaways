@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, Button, Tooltip } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Card, Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import "../App.css";
 
 const RocketCard = ({
@@ -12,6 +12,10 @@ const RocketCard = ({
   launchDescription,
   missionDescription,
 }) => {
+  // hide tooltip
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  // handle adding to local storage
   const handleAddToFavorites = () => {
     // Get existing favorites from local storage (if any)
     const existingFavorites = JSON.parse(localStorage.getItem('rocketFavorites')) || [];
@@ -33,9 +37,24 @@ const RocketCard = ({
 
     // Save the updated favorites to local storage
     localStorage.setItem('rocketFavorites', JSON.stringify(updatedFavorites));
+
+    // Show the tooltip
+    setShowTooltip(true);
+    console.log(setShowTooltip)
+
+    // Hide the tooltip after a delay (e.g., 3 seconds)
+    setTimeout(() => {
+      setShowTooltip(false);
+    }, 3000);
+
   };
 
-
+  const renderTooltip = () => (
+    <Tooltip id="favBtnTooltip">
+      Added to your list! 🚀
+    </Tooltip>
+  );
+  
   return (
     <Card>
       <Card.Header>Rocket: {rocket}</Card.Header>
@@ -52,16 +71,23 @@ const RocketCard = ({
             <p>{launchDescription}</p>
             <p>{missionDescription}</p>
         </Card.Text>
-        <Button 
-          className="rocketButton"
-          style={{
-            backgroundColor: 'rgba(46, 229, 157, 0.4)',
-            border: "none"
-          }}
-          variant="info" 
-          onClick={handleAddToFavorites}>
-          Add to Favourites
-        </Button>
+        <OverlayTrigger
+          placement="top"
+          overlay={renderTooltip}
+          show={showTooltip}
+        >
+          <Button 
+            className="rocketButton"
+            style={{
+              backgroundColor: 'rgba(46, 229, 157, 0.4)',
+              border: "none"
+            }}
+            variant="info" 
+            onClick={handleAddToFavorites}
+          >
+            Add to my List
+          </Button>
+        </OverlayTrigger>
       </Card.Body>
     </Card>
   );
