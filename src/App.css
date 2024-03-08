@@ -139,7 +139,14 @@ header {
 
  /* star button on NavBar */
 .starBtn {
+  color: white;
+  font-size: 24px;
   cursor: pointer;
+  margin-right: 30px;
+}
+
+.starBtn:hover {
+  color: #c1ffb3;
 }
 
 /* buttons on Next 5 Rocket Launches */
