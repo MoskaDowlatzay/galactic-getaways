@@ -5,17 +5,18 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function NavBar() {
   // const navigate = useNavigate();
 
-   //Star Tooltip
-   const starTooltip = (
+  //Star Tooltip
+  const starTooltip = (
     <Tooltip id="starTooltip" className="custom-tooltip">
-      Click me to see your saved list of rocket launches to <strong>take your imagination to the stars</strong>!
+      Click me to see your saved list of rocket launches to{" "}
+      <strong>take your imagination to the stars</strong>!
     </Tooltip>
   );
 
   return (
     <Navbar
       variant="dark"
-      expand="lg"
+      // expand="lg"
       style={{ width: "100%", zIndex: "1000" }}
       className="navbarr"
     >
@@ -24,7 +25,7 @@ function NavBar() {
           className="d-flex justify-content-between w-100 me-auto"
           style={{ marginLeft: "30px" }}
         >
-          <div className="d-flex flex-row">
+          <div className="d-flex flex-row navlinks">
             <Nav.Link href="/home" style={{ marginRight: "30px" }}>
               Home
             </Nav.Link>
@@ -42,21 +43,21 @@ function NavBar() {
             </Nav.Link>
           </div>
           {/* Star with saved rocket launches */}
-          <OverlayTrigger 
+          <OverlayTrigger
             className="custom-tooltip"
             placement="left"
             overlay={starTooltip}
           >
-          <a href="/favorites" onClick={() => navigate("/favorites")}>
-            <i
-              className="bi bi-star star starBtn"
-              // style={{
-              //   marginRight: "30px",
-              //   color: "white",
-              //   fontSize: "24px",
-              // }}
-            ></i>
-          </a>
+            <a href="/favorites" onClick={() => navigate("/favorites")}>
+              <i
+                className="bi bi-star star starBtn"
+                // style={{
+                //   marginRight: "30px",
+                //   color: "white",
+                //   fontSize: "24px",
+                // }}
+              ></i>
+            </a>
           </OverlayTrigger>
         </Nav>
       </Navbar.Collapse>
