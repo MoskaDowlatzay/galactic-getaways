@@ -24,6 +24,16 @@ export default function RocketData() {
       >
         Next 5 Rocket Launches
       </h1>
+      <p
+        style={{
+          color: "#d7fece",
+          textAlign: "center",
+          fontSize: "1.2rem",
+          marginBottom: "25px",
+          }}
+          >
+        Check the rockets scheduled to leave the Earth's gravity in the next few days and save them to your list.
+      </p>
       <div className="row">
         {rocketArr.map((rocket) => (
           <div key={rocket.id} className="col-lg-4 mb-4">

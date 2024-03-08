@@ -52,7 +52,14 @@ const RocketCard = ({
             <p>{launchDescription}</p>
             <p>{missionDescription}</p>
         </Card.Text>
-        <Button variant="info" onClick={handleAddToFavorites}>
+        <Button 
+          className="rocketbutton"
+          style={{
+            backgroundColor: 'rgba(46, 229, 157, 0.4)',
+            border: "none"
+          }}
+          variant="info" 
+          onClick={handleAddToFavorites}>
           Add to Favourites
         </Button>
       </Card.Body>
