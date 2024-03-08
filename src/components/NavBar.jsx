@@ -34,6 +34,9 @@ function NavBar() {
             <Nav.Link href="/travel" style={{ marginRight: "30px" }}>
               Travel
             </Nav.Link>
+            <Nav.Link href="/learn" style={{ marginRight: "30px" }}>
+              Learn
+            </Nav.Link>
             <Nav.Link href="/contact" style={{ marginRight: "30px" }}>
               Contact
             </Nav.Link>
